@@ -1,17 +1,19 @@
 import SwiftUI
 
 struct Blobby: View {
+    
+    @State var boo: Bool = false
+    let segments: Double = 360
+    let height: Double = 1.0 // 1.0 gives normal height, heigher height = more amlitude
+    
     var body: some View {
-        Blob()
+        ZStack {
+            Color.white.ignoresSafeArea()
+                .brightness(-0.1)
+            
+            Blob(boo: boo, sides: segments, height: height)
+        }
+        .onTapGesture { boo.toggle() }
+        
     }
 }
-
-func calculateCoordinatePoint(angleInDegrees: Double, distance: Double) -> (x: Double, y: Double) {
-    let angleInRadians = angleInDegrees * Double.pi / 180.0
-    let x = distance * cos(angleInRadians)
-    let y = distance * sin(angleInRadians)
-    return (x, y)
-}
-
-
-
