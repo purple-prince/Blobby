@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D8B534482B35306D00B69D15 /* Blobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B534472B35306D00B69D15 /* Blobby.swift */; };
+		D8B5344F2B353BAB00B69D15 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B5344E2B353BAB00B69D15 /* Blob.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		D8B534442B35306D00B69D15 /* libBlobby.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBlobby.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B534472B35306D00B69D15 /* Blobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blobby.swift; sourceTree = "<group>"; };
+		D8B5344E2B353BAB00B69D15 /* Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				D8B534472B35306D00B69D15 /* Blobby.swift */,
+				D8B5344E2B353BAB00B69D15 /* Blob.swift */,
 			);
 			path = Blobby;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8B5344F2B353BAB00B69D15 /* Blob.swift in Sources */,
 				D8B534482B35306D00B69D15 /* Blobby.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
