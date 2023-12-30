@@ -9,15 +9,19 @@ struct Blob: Shape {
     let height: Double
     let randomness: Double
     let density: Double
+    let hollow: Double
+    let circleness: Double
     
     var points: [CGPoint] = []
     
-    init(boo: Bool, sides: Double, height: Double, randomness: Double, density: Double) {
+    init(boo: Bool, sides: Double, height: Double, randomness: Double, density: Double, hollow: Double, circleness: Double) {
         self.boo = boo
         self.sides = sides
         self.height = height
         self.randomness = randomness
         self.density = density
+        self.hollow = hollow
+        self.circleness = circleness * 100.0
     }
     
     func path(in rect: CGRect) -> Path {
@@ -35,7 +39,14 @@ struct Blob: Shape {
             let modifier2 = cos(angle + 180)
             let sinCalc = (sin(Double(angle * density) + modifier1 + modifier2)  * randomFactor)
             
-            points.append(CGPoint(x: 0, y: 0))
+            let distance = (sinCalc * 10.0 + 1.0) / circleness + 1.0 // 10.0 is the height
+            
+            let coords = calculateCoordinatePoint(angleInDegrees: Double(angle), distance: distance)
+            
+            let x = coords.x * width / 1.5
+            let y = coords.y * height / 1.5
+            
+            points.append(CGPoint(x: x + rect.width / 2, y: y + rect.height / 2))
         }
         
         let first = points.removeFirst()
@@ -58,8 +69,3 @@ struct Blob: Shape {
         return (x, y)
     }
 }
-
-
-
-
-
